@@ -8,5 +8,11 @@ module.exports = {
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-preact",
+		{
+			resolve: "gatsby-plugin-plausible",
+			options: {
+				domain: "withnimiq.vercel.app",
+			},
+		},
 	],
 };

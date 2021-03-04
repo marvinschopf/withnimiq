@@ -13,7 +13,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "style:fix": "prettier --write *.js *.ts *.json src/"
   },
   "dependencies": {
     "gatsby": "^3.0.1",
@@ -33,5 +34,10 @@
     "@typescript-eslint/parser": "^4.16.1",
     "prettier": "^2.2.1",
     "typescript": "^4.2.2"
+  },
+  "prettier": {
+    "useTabs": true,
+    "semi": true,
+    "tabWidth": 4
   }
 }

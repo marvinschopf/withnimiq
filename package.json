@@ -25,6 +25,7 @@
 		"gatsby-plugin-sass": "^4.0.0",
 		"gatsby-plugin-sitemap": "^3.0.0",
 		"preact": "10.5.12",
+		"preact-media-hook": "1.0.3",
 		"preact-render-to-string": "5.1.12",
 		"react": "^17.0.1",
 		"react-bootstrap": "1.5.1",

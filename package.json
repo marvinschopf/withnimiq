@@ -4,6 +4,7 @@
   "private": true,
   "description": "Nimiq Apps",
   "author": "Marvin Schopf",
+  "homepage": "https://withnimiq.vercel.app/",
   "keywords": [
     "gatsby"
   ],

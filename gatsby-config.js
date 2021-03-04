@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Nimiq Apps",
+    url: "https://withnimiq.vercel.app/",
   },
   plugins: [
     "gatsby-plugin-sass",

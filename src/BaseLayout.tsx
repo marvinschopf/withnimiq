@@ -14,6 +14,10 @@ const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
 		"(prefers-color-scheme: dark)"
 	);
 
+    console.log(systemThemeDark);
+
+    console.log(systemThemeDark ? "dark" : "light");
+
 	return (
 		<React.Fragment>
 			<Navbar bg={systemThemeDark ? "dark" : "light"}>

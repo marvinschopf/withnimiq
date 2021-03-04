@@ -1,4 +1,5 @@
 import * as React from "preact";
+import { h } from "preact";
 import { navigate } from "gatsby";
 import { useMediaPredicate } from "preact-media-hook";
 

@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component } from "preact";
 
 export default class IndexPage extends Component {
 	render() {

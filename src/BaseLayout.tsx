@@ -1,5 +1,11 @@
 import * as React from "preact";
-import { h } from "preact";
+import {
+	FunctionalComponent,
+	createElement as h,
+	render,
+	Component,
+} from "preact";
+import { useState } from "preact/hooks";
 import { navigate } from "gatsby";
 import { useMediaPredicate } from "preact-media-hook";
 
@@ -8,9 +14,7 @@ import Nav from "react-bootstrap/Nav";
 
 type BaseLayoutProps = {};
 
-const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
-	props
-) {
+const BaseLayout: FunctionalComponent<BaseLayoutProps> = function (props) {
 	const systemThemeDark: boolean = useMediaPredicate(
 		"(prefers-color-scheme: dark)"
 	);

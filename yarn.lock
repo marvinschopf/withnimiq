@@ -8372,11 +8372,6 @@ postcss@^8.2.6:
     nanoid "^3.1.20"
     source-map "^0.6.1"
 
-preact-media-hook@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/preact-media-hook/-/preact-media-hook-1.0.3.tgz#1e208a90bfae9a351d97415c58e9b3a8d2bfef7c"
-  integrity sha512-Vl32i29Hyb5DGg7atJ/Fp4dXhMrgRG9n3/99tRfxH7Wixapgguil0PGnzgXJMOWisPp/VAx6ShlWhXVaTYMITg==
-
 preact-render-to-string@5.1.12:
   version "5.1.12"
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.1.12.tgz#3d258a177ef8947f768dd0f2c56629e7fda2dc39"
@@ -8720,6 +8715,11 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+
+react-media-hook@0.4.9:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/react-media-hook/-/react-media-hook-0.4.9.tgz#7e57092f5800c53787dc9e912ad09e749dfb7bc7"
+  integrity sha512-FZr/2xA1+23vDJ1IZ794yLqMRRkBoCNOiJATdtTfB5GyVc5djf8FL2qEB/68pSkiNgHdHsmKknMSDr0sC4zBKQ==
 
 react-overlays@^5.0.0:
   version "5.0.0"

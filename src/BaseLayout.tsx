@@ -23,7 +23,15 @@ const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
 
 	return (
 		<React.Fragment>
-			<Navbar bg={systemThemeDark ? "dark" : "light"}>
+			<Navbar
+				bg={
+					typeof window !== "undefined"
+						? systemThemeDark
+							? "dark"
+							: "light"
+						: "light"
+				}
+			>
 				<Navbar.Brand
 					onClick={() => {
 						navigate("/");

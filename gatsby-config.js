@@ -8,6 +8,7 @@ module.exports = {
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-sitemap",
 		"gatsby-plugin-preact",
+		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-plugin-plausible",
 			options: {

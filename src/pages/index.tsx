@@ -1,6 +1,6 @@
-import * as React from "react";
+import { Component } from "preact";
 
-export default class IndexPage extends React.Component {
+export default class IndexPage extends Component {
 	render() {
 		return (
 			<main>

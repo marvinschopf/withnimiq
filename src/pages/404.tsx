@@ -1,4 +1,4 @@
-import * as React from "react";
+import { Component } from "preact";
 import { Link } from "gatsby";
 
 export default class NotFoundPage extends React.Component {

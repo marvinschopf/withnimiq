@@ -17,15 +17,27 @@ export default function HTML(props) {
 					integrity="sha256-T/zFmO5s/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE="
 					crossorigin="anonymous"
 				/>
+				<link
+					rel="stylesheet"
+					href="https://cdn.jsdelivr.net/npm/@openfonts/muli_latin@1.0.1/index.css"
+					integrity="sha256-Yvf4n54oY6MSIMy8bZL5tJQQkKtRXLfpuG3ooqlSKxM="
+					crossorigin="anonymous"
+				/>
 				{props.headComponents}
 			</head>
 			<body {...props.bodyAttributes}>
 				{props.preBodyComponents}
 				<div
-					key={`body`}
-					id="___gatsby"
-					dangerouslySetInnerHTML={{ __html: props.body }}
-				/>
+					style={{
+						fontFamily: `"Muli", "Arial", sans-serif`,
+					}}
+				>
+					<div
+						key={`body`}
+						id="___gatsby"
+						dangerouslySetInnerHTML={{ __html: props.body }}
+					/>
+				</div>
 				{props.postBodyComponents}
 			</body>
 		</html>

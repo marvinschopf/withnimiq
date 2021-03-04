@@ -2,11 +2,12 @@ import * as React from "preact";
 import { Helmet } from "react-helmet";
 
 import Container from "react-bootstrap/Container";
+import BaseLayout from "../BaseLayout";
 
 export default class IndexPage extends React.Component {
 	render() {
 		return (
-			<main>
+			<BaseLayout>
 				{/*@ts-ignore*/}
 				<Helmet>
 					<title>Home</title>
@@ -14,7 +15,7 @@ export default class IndexPage extends React.Component {
 				<Container>
 					<h1>Home</h1>
 				</Container>
-			</main>
+			</BaseLayout>
 		);
 	}
 }

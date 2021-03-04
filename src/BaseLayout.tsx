@@ -10,13 +10,16 @@ type BaseLayoutProps = {};
 const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
 	props
 ) {
-	const systemThemeDark: boolean = useMediaPredicate(
-		"(prefers-color-scheme: dark)"
-	);
+	let systemThemeDark: boolean = false;
 
-    console.log(systemThemeDark);
+	if (typeof window !== "undefined") {
+		systemThemeDark = useMediaPredicate("(prefers-color-scheme: dark)");
+		console.log(`Window not undefined: ${systemThemeDark.toString()}`);
+	}
 
-    console.log(systemThemeDark ? "dark" : "light");
+	console.log(systemThemeDark);
+
+	console.log(systemThemeDark ? "dark" : "light");
 
 	return (
 		<React.Fragment>

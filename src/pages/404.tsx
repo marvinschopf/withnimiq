@@ -1,13 +1,11 @@
 import { Component } from "preact";
-import { Link } from "gatsby";
 
 export default class NotFoundPage extends Component {
 	render() {
 		return (
 			<main>
-				<title>Not found</title>
-				<h1>Page not found</h1>
-				<Link to="/">Home</Link>
+				<title>404</title>
+				<h1>404</h1>
 			</main>
 		);
 	}

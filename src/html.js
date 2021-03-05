@@ -30,6 +30,7 @@ export default function HTML(props) {
 				<div
 					style={{
 						fontFamily: `"Muli", "Arial", sans-serif`,
+						height: "100%",
 					}}
 				>
 					<div

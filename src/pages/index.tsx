@@ -1,4 +1,4 @@
-import * as React from "preact";
+import * as React from "react";
 import { Helmet } from "react-helmet";
 
 import Container from "react-bootstrap/Container";

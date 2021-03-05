@@ -1,5 +1,5 @@
-import * as React from "preact";
-import { useState } from "preact/hooks";
+import * as React from "react";
+//import { useState } from "preact/hooks";
 import { navigate } from "gatsby";
 import { useMediaPredicate } from "react-media-hook";
 
@@ -8,10 +8,8 @@ import Nav from "react-bootstrap/Nav";
 
 type BaseLayoutProps = {};
 
-const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
-	props
-) {
-	const [theme, setTheme] = useState("light");
+const BaseLayout: React.FunctionComponent<BaseLayoutProps> = function (props) {
+	const [theme, setTheme] = React.useState("light");
 
 	let systemThemeDark: boolean = undefined;
 

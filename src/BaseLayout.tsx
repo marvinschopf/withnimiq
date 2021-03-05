@@ -1,5 +1,4 @@
-import * as React from "react";
-//import { useState } from "preact/hooks";
+import * as React from "preact";
 import { navigate } from "gatsby";
 import { useMediaPredicate } from "react-media-hook";
 
@@ -8,45 +7,68 @@ import Nav from "react-bootstrap/Nav";
 
 type BaseLayoutProps = {};
 
-const BaseLayout: React.FunctionComponent<BaseLayoutProps> = function (props) {
-	const [theme, setTheme] = React.useState("light");
-
-	let systemThemeDark: boolean = undefined;
-
-	if (typeof window !== "undefined") {
-		systemThemeDark = useMediaPredicate("(prefers-color-scheme: dark)");
-		setTheme(systemThemeDark ? "dark" : "light");
-		console.log(`Window not undefined: ${theme}`);
+export default class BaseLayout extends React.Component<{}, { theme: string }> {
+	constructor(props: {}) {
+		super(props);
+		this.state = {
+			theme: "light",
+		};
 	}
 
-	console.log(`Final: ${theme}`);
+	componentDidMount() {
+		if (typeof window !== "undefined") {
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+				this.setState({
+					theme: "dark",
+				});
+			} else {
+				this.setState({
+					theme: "light",
+				});
+			}
+		}
+	}
 
-	return (
-		<React.Fragment>
-			<Navbar bg={theme}>
-				<Navbar.Brand
-					onClick={() => {
-						navigate("/");
-					}}
-				>
-					WithNimiq
-				</Navbar.Brand>
-				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="mr-auto">
-						<Nav.Link
-							onClick={() => {
-								navigate("/");
-							}}
-						>
-							Home
-						</Nav.Link>
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-			{props.children}
-		</React.Fragment>
-	);
-};
+	componentDidUpdate() {
+		if (typeof window !== "undefined") {
+			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+				this.setState({
+					theme: "dark",
+				});
+			} else {
+				this.setState({
+					theme: "light",
+				});
+			}
+		}
+	}
 
-export default BaseLayout;
+	render() {
+		return (
+			<React.Fragment>
+				<Navbar bg={this.state.theme}>
+					<Navbar.Brand
+						onClick={() => {
+							navigate("/");
+						}}
+					>
+						WithNimiq
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="mr-auto">
+							<Nav.Link
+								onClick={() => {
+									navigate("/");
+								}}
+							>
+								Home
+							</Nav.Link>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
+				{this.props.children}
+			</React.Fragment>
+		);
+	}
+}

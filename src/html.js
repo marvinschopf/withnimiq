@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 export default function HTML(props) {
-	const [theme, setTheme] = useState("light");
+	const [theme, setTheme] = React.useState("light");
 
 	useEffect(() => {
 		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {

@@ -57,15 +57,24 @@ export default class BaseLayout extends React.Component<
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
-				<Container
+				<div
+					style={{ height: "100%", width: "100%", margin: 0 }}
 					className={
 						this.state.theme === "dark"
 							? "bg-dark text-light"
 							: "bg-light text-dark"
 					}
 				>
-					{this.props.children}
-				</Container>
+					<Container
+						className={
+							this.state.theme === "dark"
+								? "bg-dark text-light"
+								: "bg-light text-dark"
+						}
+					>
+						{this.props.children}
+					</Container>
+				</div>
 			</React.Fragment>
 		);
 	}

@@ -11,42 +11,38 @@ export default class BaseLayout extends React.Component<{}, { theme: string }> {
 	constructor(props: {}) {
 		super(props);
 		this.state = {
-			theme: "light",
+			theme: null,
 		};
 	}
 
 	componentDidMount() {
-		if (typeof window !== "undefined") {
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-				this.setState({
-					theme: "dark",
-				});
-			} else {
-				this.setState({
-					theme: "light",
-				});
-			}
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			this.setState({
+				theme: "dark",
+			});
+		} else {
+			this.setState({
+				theme: "light",
+			});
 		}
 	}
 
 	componentDidUpdate() {
-		if (typeof window !== "undefined") {
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-				this.setState({
-					theme: "dark",
-				});
-			} else {
-				this.setState({
-					theme: "light",
-				});
-			}
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			this.setState({
+				theme: "dark",
+			});
+		} else {
+			this.setState({
+				theme: "light",
+			});
 		}
 	}
 
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar bg={this.state.theme}>
+				<Navbar bg={this.state.theme ? this.state.theme : null}>
 					<Navbar.Brand
 						onClick={() => {
 							navigate("/");

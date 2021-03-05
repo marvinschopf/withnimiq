@@ -12,9 +12,7 @@ export default class IndexPage extends React.Component {
 				<Helmet>
 					<title>Home</title>
 				</Helmet>
-				<Container>
-					<h1>Home</h1>
-				</Container>
+				<h1>Home</h1>
 			</BaseLayout>
 		);
 	}

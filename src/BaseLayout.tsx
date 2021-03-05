@@ -1,8 +1,8 @@
 import * as React from "preact";
 import { navigate } from "gatsby";
-import { useMediaPredicate } from "react-media-hook";
 
 import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
 type BaseLayoutProps = {};
@@ -57,7 +57,15 @@ export default class BaseLayout extends React.Component<
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
-				{this.props.children}
+				<Container
+					className={
+						this.state.theme === "dark"
+							? "bg-dark text-light"
+							: "bg-light text-dark"
+					}
+				>
+					{this.props.children}
+				</Container>
 			</React.Fragment>
 		);
 	}

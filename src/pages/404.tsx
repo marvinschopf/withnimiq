@@ -12,9 +12,7 @@ export default class NotFoundPage extends React.Component {
 				<Helmet>
 					<title>404</title>
 				</Helmet>
-				<Container>
-					<h1>Error 404</h1>
-				</Container>
+				<h1>Error 404</h1>
 			</BaseLayout>
 		);
 	}

@@ -27,18 +27,6 @@ export default class BaseLayout extends React.Component<{}, { theme: string }> {
 		}
 	}
 
-	componentDidUpdate() {
-		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			this.setState({
-				theme: "dark",
-			});
-		} else {
-			this.setState({
-				theme: "light",
-			});
-		}
-	}
-
 	render() {
 		return (
 			<React.Fragment>

@@ -23,6 +23,7 @@ export default function HTML(props) {
 					integrity="sha256-Yvf4n54oY6MSIMy8bZL5tJQQkKtRXLfpuG3ooqlSKxM="
 					crossorigin="anonymous"
 				/>
+				<link rel="stylesheet" href="/gatsby-focus-wrapper.css" />
 				{props.headComponents}
 			</head>
 			<body {...props.bodyAttributes} style={{ height: "100%" }}>

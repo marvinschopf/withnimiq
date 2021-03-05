@@ -1,17 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 export default function HTML(props) {
-	const [theme, setTheme] = React.useState("light");
-
-	useEffect(() => {
-		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			setTheme("dark");
-		} else {
-			setTheme("light");
-		}
-	});
-
 	return (
 		<html {...props.htmlAttributes} style={{ height: "100%" }}>
 			<head>
@@ -35,15 +25,7 @@ export default function HTML(props) {
 				/>
 				{props.headComponents}
 			</head>
-			<body
-				{...props.bodyAttributes}
-				style={{ height: "100%" }}
-				className={
-					theme === "dark"
-						? "bg-dark text-light"
-						: "bg-light text-dark"
-				}
-			>
+			<body {...props.bodyAttributes} style={{ height: "100%" }}>
 				{props.preBodyComponents}
 				<div
 					style={{
@@ -54,6 +36,9 @@ export default function HTML(props) {
 						key={`body`}
 						id="___gatsby"
 						dangerouslySetInnerHTML={{ __html: props.body }}
+						style={{
+							height: "100%",
+						}}
 					/>
 				</div>
 				{props.postBodyComponents}

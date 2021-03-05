@@ -7,7 +7,10 @@ import Nav from "react-bootstrap/Nav";
 
 type BaseLayoutProps = {};
 
-export default class BaseLayout extends React.Component<{}, { theme: string }> {
+export default class BaseLayout extends React.Component<
+	{},
+	{ theme: "dark" | "light" }
+> {
 	constructor(props: {}) {
 		super(props);
 		this.state = {
@@ -30,7 +33,10 @@ export default class BaseLayout extends React.Component<{}, { theme: string }> {
 	render() {
 		return (
 			<React.Fragment>
-				<Navbar bg={this.state.theme ? this.state.theme : null}>
+				<Navbar
+					bg={this.state.theme ? this.state.theme : null}
+					variant={this.state.theme ? this.state.theme : null}
+				>
 					<Navbar.Brand
 						onClick={() => {
 							navigate("/");

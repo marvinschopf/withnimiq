@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function HTML(props) {
 	return (
-		<html {...props.htmlAttributes}>
+		<html {...props.htmlAttributes} style={{ height: "100%" }}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -25,7 +25,7 @@ export default function HTML(props) {
 				/>
 				{props.headComponents}
 			</head>
-			<body {...props.bodyAttributes}>
+			<body {...props.bodyAttributes} style={{ height: "100%" }}>
 				{props.preBodyComponents}
 				<div
 					style={{

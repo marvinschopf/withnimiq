@@ -1,4 +1,5 @@
 import * as React from "preact";
+import { useState } from "preact/hooks";
 import { navigate } from "gatsby";
 import { useMediaPredicate } from "react-media-hook";
 
@@ -10,28 +11,23 @@ type BaseLayoutProps = {};
 const BaseLayout: React.FunctionalComponent<BaseLayoutProps> = function (
 	props
 ) {
-	let systemThemeDark: boolean = false;
+	const [theme, setTheme] = useState("light");
+
+	let systemThemeDark: boolean = undefined;
 
 	if (typeof window !== "undefined") {
 		systemThemeDark = useMediaPredicate("(prefers-color-scheme: dark)");
-		console.log(`Window not undefined: ${systemThemeDark.toString()}`);
+		setTheme(
+			useMediaPredicate("(prefers-color-scheme: dark)") ? "dark" : "light"
+		);
+		console.log(`Window not undefined: ${theme}`);
 	}
 
-	console.log(systemThemeDark);
-
-	console.log(systemThemeDark ? "dark" : "light");
+	console.log(theme);
 
 	return (
 		<React.Fragment>
-			<Navbar
-				bg={
-					typeof window !== "undefined"
-						? systemThemeDark
-							? "dark"
-							: "light"
-						: "light"
-				}
-			>
+			<Navbar bg={theme}>
 				<Navbar.Brand
 					onClick={() => {
 						navigate("/");

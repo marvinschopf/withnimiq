@@ -15,13 +15,11 @@ const BaseLayout: React.FunctionComponent<BaseLayoutProps> = function (props) {
 
 	if (typeof window !== "undefined") {
 		systemThemeDark = useMediaPredicate("(prefers-color-scheme: dark)");
-		setTheme(
-			useMediaPredicate("(prefers-color-scheme: dark)") ? "dark" : "light"
-		);
+		setTheme(systemThemeDark ? "dark" : "light");
 		console.log(`Window not undefined: ${theme}`);
 	}
 
-	console.log(theme);
+	console.log(`Final: ${theme}`);
 
 	return (
 		<React.Fragment>
